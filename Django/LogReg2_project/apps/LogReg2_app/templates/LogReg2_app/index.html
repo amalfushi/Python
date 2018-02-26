@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login | Registration</title>
+</head>
+<body>
+    <div id='wrapper'>
+        {% if messages%}
+            {% for error in messages %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <h1>Register!</h1>
+        <form action="/register" method="post">
+            {%csrf_token%}
+            <input type="text" name="first_name" id="first_name" placeholder="First name"><br>
+            <input type="text" name="last_name" id="last_name" placeholder="Last name"><br>
+            <input type="text" name="username" id="username" placeholder="Username"><br>
+            <input type="email" name="email" id="email " placeholder="Email"><br>
+            <input type="password" name="password" id="password" placeholder="Password"><br>
+            <input type="password" name="c_password" id="c_password" placeholder="Confirm Password"><br>
+            <input type="submit" value="Register"><br>
+        </form>
+
+        <h1>Login!</h1>
+        <form action="/login" method="post">
+            {%csrf_token%}
+            <input type="email" name="email" id="email" placeholder="Email"><br>
+            <input type="password" name="password" id="password" placeholder="Password"><br>
+            <input type="submit" value="Login"><br>
+        </form>
+    </div>
+</body>
+</html>

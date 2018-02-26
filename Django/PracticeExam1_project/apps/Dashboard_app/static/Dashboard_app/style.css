@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dotted darkred; */
+}
+
+#wrapper{
+    width: 4W00px;
+    height: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    margin-bottom: 10px;
+}
+h3{
+    margin-top: 40px;
+}
+.header{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: center;
+}
+.errors{
+    color: darkred;
+}
+ul{
+    list-style: none;
+}
+table{
+    margin-top:30px;
+    text-align: center;
+    align-self:center;
+    overflow:auto;
+}

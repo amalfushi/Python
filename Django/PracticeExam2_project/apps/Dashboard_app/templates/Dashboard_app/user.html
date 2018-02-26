@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Registration</title>
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href="{% static 'Dashboard_app/style.css' %}">
+</head>
+<body>
+    <div id='wrapper'>
+        <div id="header">
+            <h1>Welcome, {{ first_name }}!</h1>
+            <div>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <a href="/dashboard/user/{{ userID }}">Click here to view your comments</a>
+        <div id="main">
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th># of Comments</th>
+                </thead>
+                {% for user in otherUsers %}
+                    <tr>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.comment_count }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

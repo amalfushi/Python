@@ -1,0 +1,39 @@
+#use twitter schema
+#USE twitter;
+
+#return everything from tweets table
+#SELECT * FROM tweets;
+
+#return everything from users table
+#SELECT * FROM users;
+
+#return everything from users where the handle starts with a 'R' and sort
+#by birthday in descending order (youngest first)
+#SELECT * FROM users WHERE handle LIKE "R%" ORDER BY birthday;
+
+#returns the entire user table with the tweets table joined where users.id 
+#matches tweets.user_id (every tweet for every user
+#SELECT * FROM users LEFT JOIN tweets ON users.id = tweets.user_id;
+
+#same as above but returns just user 2
+#SELECT * FROM users LEFT JOIN tweets ON users.id = tweets.user_id WHERE users.id = 2;
+
+#just the tweets of user 2
+#SELECT tweets.tweet FROM users LEFT JOIN tweets ON users.id = tweets.user_id WHERE users.id = 2;
+
+#returns the first name and tweets that that person has favorited
+#SELECT first_name, tweet
+#FROM users
+#LEFT JOIN faves
+#ON users.id = faves.user_id
+#LEFT JOIN tweets
+#ON faves.tweet_id = tweets.id;
+
+#same as above but only user 1's
+SELECT first_name, tweet
+FROM users
+LEFT JOIN faves
+ON users.id = faves.user_id
+LEFT JOIN tweets
+ON faves.tweet_id = tweets.id
+WHERE users.id = 1;

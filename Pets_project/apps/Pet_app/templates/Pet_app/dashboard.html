@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Registration</title>
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href="{% static 'Pet_app/style.css' %}">
+</head>
+<body>
+    <div id='wrapper'>
+        <div id='header'>
+            <h1>{{ curUser.first_name }}</h1>
+            <div>
+                <a href="/pets/{{ curUser.id }}">My Pets</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div id='left'>
+            <h2>Other Users</h2>
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th># of pets</th>
+                </thead>
+                {% for user in otherUsers%}
+                    <td>
+                        <tr>{{ user.first_name }}</tr>
+                        <tr>{{ user.pets.count }}</tr>
+                    </td>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

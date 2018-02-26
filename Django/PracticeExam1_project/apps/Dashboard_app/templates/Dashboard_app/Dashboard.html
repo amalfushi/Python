@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome, {{ first_name }}</title>
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href="{% static 'Dashboard_app/style.css' %}">
+</head>
+<body>
+    <div id='wrapper'>
+        <div class="header">
+            <h1>Hello, {{ first_name }}!</h1>
+            <a href="/logout">Logout</a>
+        </div>
+
+
+        <a href="/dashboard/{{ userID }}">Click here to view your comments!</a><br>
+
+        <h3>Other Users</h3>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th># Comments</th>
+            </thead>
+            {% for user in otherUsers %}
+                <tr>
+                    <td><a href="/dashboard/{{user.id}}">{{user.first_name}}</a></td>
+                    <td>{{user.recieved_comments.count}}</td>
+                </tr>
+            {% endfor%}
+        </table>
+    </div>
+</body>
+</html>

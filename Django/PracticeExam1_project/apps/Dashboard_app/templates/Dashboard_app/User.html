@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments | {{ getUser.first_name }}</title>
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href="{% static 'Dashboard_app/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="header">
+            <h1>Name: {{ getUser.first_name }}</h1>
+            <a href="/logout">Logout</a>
+        </div>
+
+        {% for comment in comments%}
+            <p>"{{comment.comment_text}}"  --{{ comment.sender.first_name }}</p>
+        {% endfor %}
+
+        <h3>Add Comment</h3>
+        <form action="/dashboard/add" method="post">
+            {%csrf_token%}
+            <input type="hidden" name="sender" value="{{ sender }}">
+            <input type="hidden" name="recipient" value="{{ recipient }}">
+            <input type="text" name="comment" id="comment" value=""><br>
+            <input type="submit" value="Add Comment">
+        </form>
+    </div>
+</body>
+</html>

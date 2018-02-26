@@ -1,0 +1,8 @@
+pip install Django -- installs Django package
+pip list -- lists installed modules
+pip install Django -- reports already installed (also probably would update)
+pip freeze -- lists installed modules (not pip).
+pip freeze > requirements.txt -- creates the list above in a text document
+pip uninstall Django -- uninstalls Django
+pip show Django -- would show info about django
+pip search Flasks -- lists a bunch of modules that use Flask

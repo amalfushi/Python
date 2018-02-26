@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="left" class="panels">
+            <form action="process" method="post">
+                {% csrf_token %}
+                <h1>Add a new word</h1>
+                <input type="text" name="word" id="word">
+
+                <h3>Choose a Color</h3>
+                <ul>
+                    <li>
+                        <input type="radio" class="indent" name="color" id="red" value="red" checked>
+                        <label for="red">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="indent" name="color" id="green" value="green">
+                        <label for="green">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" class="indent" name="color" id="blue" value="blue">
+                        <label for="blue">Blue</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="bigoFont" id="bigoFont">
+                        <label for="bigoFont">show in BIG fonts!</label>
+                    </li>
+                </ul>
+                <button type="submit">Add to Session</button>
+            </form>
+        </div>
+        <div id="right" class="panels">
+            <a href="/reset"><button>Clear Session</button></a>
+            {% if request.session.words %}
+                {% for word in request.session.words %}
+                    <p><span class="{{ word.color }} {{ word.bigoFont }}">{{ word.word }}</span> - added on {{ word.time }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

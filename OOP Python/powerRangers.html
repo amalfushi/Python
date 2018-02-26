@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Power Rangers</title>
+    <script type="text/javascript">
+        function PowerRangerCreator(name, color, zord){
+            this.name = name;
+            this.color = color;
+            this.zord = zord;
+
+            this.printRanger = function(){
+                console.log(this.name, " - ", this.color, " - ", this.zord);
+            }
+        }
+
+        var redRanger = new PowerRangerCreator("Tommy", "Red", "Tyrannosaurus Rex");
+        var blackRanger = new PowerRangerCreator("Zack", "Black", "Mastodon");
+        var blueRanger = new PowerRangerCreator("Billy", "Blue", "Triceratops");
+        var yellowRanger = new PowerRangerCreator("Trini", "Yellow", "Saber-Toothed Tiger");
+        var pinkRanger = new PowerRangerCreator("Kimberly", "Pink", "Pterodactyl");
+        var greenRanger = new PowerRangerCreator("Tommy", "Green", "Dragonzord")
+
+        rangers = [redRanger, blackRanger, blueRanger, yellowRanger, pinkRanger, greenRanger];
+
+        for(var i = 0; i<rangers.length; i++){
+            rangers[i].printRanger();
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

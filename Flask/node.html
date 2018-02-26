@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Node(val){
+            this.val = val;
+            this.next = null
+        }
+
+        function SLL(){
+            this.head = null
+        }
+
+        var nodle1 = new Node("noodle 1");
+        var nodle2 = new Node("noodle 2");
+        var nodle3 = new Node("noodle 3");
+        var sauceSll = new SLL();
+
+        sauceSll.head = nodle3;
+        nodle3.next = nodle2;
+        nodle2.next = nodle1;
+
+        console.log(sauceSll)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,14 @@
+h1, h2, h3{
+    color: darkred;
+    background-color: lightblue;
+}
+
+input{
+    display: inline-block
+}
+
+label{
+    display: inline-block;
+    color: darkblue;
+    font-weight: bold;
+}

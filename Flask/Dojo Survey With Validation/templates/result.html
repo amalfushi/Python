@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dojo Survey Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">    
+</head>
+<body>
+    <div id='wrapper'>
+        <form action="go_back" method="post">
+            <h1>Submitted info</h1>
+            <label>Name: </label><p class='small'>{{ name }}</p>
+            <label>Dojo Location: </label><p class='small'>{{ dojo_location }}</p>
+            <label>Favorite Language: </label><p class='small'>{{ fav_language }}</p>
+            <label>Comment: </label><p class='small'>{{ comment }}</p>
+            <button type="submit" formaction="go_back">Go Back</button>
+        </form>
+    </div>
+</body>
+</html>

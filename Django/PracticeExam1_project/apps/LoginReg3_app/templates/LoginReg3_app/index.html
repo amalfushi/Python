@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Registration</title>
+    {% load static %}
+    <link rel="stylesheet" type ="text/css" href="{% static 'LoginReg3_app/style.css' %}">
+</head>
+<body>
+    <div id='wrapper'>
+        <div class='container left'>
+        <h1>Register!</h1>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <input type="text" name="first_name" id="first_name" placeholder="First Name"><br>
+                <input type="text" name="last_name" id="last_name" placeholder="Last Name"><br>
+                <input type="text" name="email" id="email" placeholder="Email"><br>
+                <input type="password" name="password" id="password" placeholder="Password"><br>
+                <input type="password" name="c_password" id="c_password" placeholder="Confirm Password"><br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+       
+        <div class='container right'>
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                {% csrf_token %}
+                <input type="text" name="email" id="email" placeholder="Email"><br>
+                <input type="password" name="password" id="password" placeholder="Password"><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        {% if messages %}
+            {% for error in messages %}
+                <p class="errors">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

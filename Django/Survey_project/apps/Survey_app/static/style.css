@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dotted darkred; */
+}
+
+#wrapper{
+    width: 450px;
+    height: 450px;
+    margin: 0px auto;
+}
+
+label, .small{
+    display: inline-block;
+}
+
+.small{
+    width: 220px;
+}
+
+label{
+    font-weight: bold;
+    width: 220px;
+}
+
+#your_name{
+    width: 216px;
+}
+
+#comment{
+    width: 448px;
+}
+
+ul{
+    list-style: none;
+    margin-bottom: 20px
+}
+
+.error{
+    color: darkred;
+}
+
+button{
+    padding: 10px;
+}

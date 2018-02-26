@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '481923778848049',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v2.10'
+            });
+            
+            FB.AppEvents.logPageView();
+
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });   
+        };
+      
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=481923778848049';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script> -->
+    {% load socialaccount %}
+    {% providers_media_js %}
+    
+    <a href="{% provider_login_url "facebook" method="js_sdk" %}">Login Button image</a>
+    <!-- <div id="fb-root"></div>
+    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div> -->
+</body>
+</html>

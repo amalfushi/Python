@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Number Game</title>
+    <style type='text/css'>
+        body{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100<br>Take a guess!</p>
+    {%if 'guess' in session%}
+    <div id="message">
+        <h2>{{ message }}</h2>
+        {%if session['guess'] == session['number']%}
+            <form action='/restart' method='POST'>
+                <input type="submit" name="Play again!" value="Play again!">	
+            </form>
+        {%endif%}
+    </div>
+    {%endif%}
+    <form action="verify" method="POST">
+        <input type="text" name="guess" id="guess" value="Enter a number">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

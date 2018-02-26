@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What's My Name?</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+        <form action="name" method="post">
+            <label for="your_name">Your Name:</label>
+            <input type="text" name="your_name" id="your_name">
+        </form>
+    </div>
+    
+</body>
+</html>

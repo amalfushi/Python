@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <metap-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date and Time</title>
+    <style type="text/css">
+        #wrapper{
+            width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        h3, #current{
+            border: 2px solid black;
+            align-self: center;
+        }
+        h3{
+            height: 50px;
+            width: 250px;
+        }
+        #current{
+            font-weight: bold;
+            height: 200px;
+            width: 600px;
+            
+        }
+        p{
+            margin:0px;
+            font-size: 80px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id='wrapper'>
+        <h3>The current time and Date</h3>
+        <div id="current">
+            <p>{{date}}<br>{{time}}</p>
+        </div>
+    </div>
+</body>
+</html>

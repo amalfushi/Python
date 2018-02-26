@@ -1,0 +1,24 @@
+Context---- a dictionary that can be passed to a render to insert values into html page
+Session---- temporary storage of data accessible across all routes (and multiple apps)
+Return---- ends the function and returns a values
+Render---- processes html and returns it to the caller (inserts data if needed)
+Message---- a temporary message valid for one request cycle
+redirect---- goes to another page
+request---- information from the client
+
+
+Create
+    2 routes
+        form
+        submitting
+Read
+    2 routes
+        show all
+        show one
+Update
+    2 routes
+        form
+        submit
+Delete
+    1 routes
+        get/delete

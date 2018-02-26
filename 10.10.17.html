@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Node(val){
+            this.val = val;
+        }
+        function SLL(){
+            this.head = null;
+            this.add = function(val){
+                var newNode = new Node(val);
+                if(this.head==null){
+                    this.head = newNode;
+                } else {
+                    cur = this.head
+                    while(cur.next != null){
+                        cur = cur.next;
+                    }
+                    cur.next = newNode;
+                }
+            }
+        }
+
+        var newSLL = new SLL();
+        newSLL.add("taco")
+        newSLL.add("chalupa")
+        newSLL.add("ice cream")
+        console.log(newSLL)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
